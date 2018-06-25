@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -20,7 +21,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //connection to mongoose
-mongoose.Promise = g
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost:27017/nkataa1');
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
