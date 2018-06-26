@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //connection to mongoose
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/nkataa1');
+mongoose.connect('mongodb://localhost:27017/nkataa');
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
