@@ -14,3 +14,14 @@ exports.addUser = function(req, res) {
         }
     })
 }
+
+//lets get Users in the database
+exports.getUsers = function(req, res) {
+    model.find(function(err, users){
+        if(err) {
+            res,json({err: err, message:'Something went wrong'})
+        } else {
+            res.json(users);
+        }
+    })
+}
