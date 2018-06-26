@@ -60,6 +60,16 @@ exports.getUserByParam = function(req, res) {
         });
         break;
         case 'name':
-        model.find({name: value})
+        model.find({name: value}, '-password', function(err, data) {
+            if(err) {
+                res.json({err:err, message: 'Name not found'});
+            } else {
+                res.json({message: data});
+            }
+        })
+        break;
+        default: 
+        res.json({message: 'could not find the resource'});
+        break;
     }
 }
