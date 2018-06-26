@@ -1,5 +1,18 @@
 var model = require('../Models/User');
 
+exports.delete = function(req, res){
+    //res.json(req.params.id);
+    var options = {_id: req.params.id};
+    model.remove(options, function(err) {
+        if(err) {
+            res.json({err: err, message: 'The resource could not be deleted!'})
+        } else {
+            res.json({message: 'the resource was deleted!'})
+        }
+    });
+
+}
+
 exports.addUser = function(req, res) {
     var data = {
         name: req.body.name,
@@ -22,18 +35,6 @@ exports.getUsers = function(req, res) {
             res,json({err: err, message:'Something went wrong'})
         } else {
             res.json(users);
-        }
-    })
-}
-
-//let us now delete a user in the database
-exports.deleteUser = function(req, res) {
-    var options = {_id: req.params.id};
-    model.remove(options, function(err) {
-        if(err) {
-            res.json({err: err, message: 'The resource could not be deleted!'})
-        } else {
-            res.json({message: 'the resource was deleted!'})
         }
     })
 }
