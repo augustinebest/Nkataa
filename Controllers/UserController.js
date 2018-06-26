@@ -89,5 +89,5 @@ exports.updateUser = function(req, res) {
         } else {
             res.json({message: 'Your profile have been Updated!'});
         }
-    })
+    });
 }
