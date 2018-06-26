@@ -55,8 +55,11 @@ exports.getUserByParam = function(req, res) {
         case 'email':
         model.findOne({email: value}, '-password', function(err, data) {
             if(err) {
-                res.json({err: err, message: 'Email'})
+                res.json({err: err, message: 'Email not found'});
             }
-        })
+        });
+        break;
+        case 'name':
+        model.find({name: value})
     }
 }
