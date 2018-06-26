@@ -25,3 +25,15 @@ exports.getUsers = function(req, res) {
         }
     })
 }
+
+//let us now delete a user in the database
+exports.deleteUser = function(req, res) {
+    var options = {_id: req.params.id};
+    model.remove(options, function(err) {
+        if(err) {
+            res.json({err: err, message: 'The resource could not be deleted!'})
+        } else {
+            res.json({message: 'the resource was deleted!'})
+        }
+    })
+}
