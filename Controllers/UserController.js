@@ -38,3 +38,25 @@ exports.getUsers = function(req, res) {
         }
     })
 }
+
+exports.getUserByParam = function(req, res) {
+    var key = req.params.key;
+    var value = req.params.value;
+    switch(key) {
+        case 'id':
+        model.findById(value, '-password', function(err, data) {
+            if(err) {
+                res.json({err: err, message: 'Id not found'});
+            } else {
+                res.json({message: data});
+            }
+        });
+        break;
+        case 'email':
+        model.findOne({email: value}, '-password', function(err, data) {
+            if(err) {
+                res.json({err: err, message: 'Email'})
+            }
+        })
+    }
+}
