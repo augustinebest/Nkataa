@@ -8,5 +8,5 @@ router.get('/de/:id', userController.delete);
 // router.get('/delete/:id', userController.delete);
 router.get('/', userController.getUsers);
 router.get('/search/:key/:value', userController.getUserByParam);
-router.post('/update/:id', userController.updateUser);
+router.post('/up/:id', userController.updateUser);
 module.exports = router;
