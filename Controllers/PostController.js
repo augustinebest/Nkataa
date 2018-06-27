@@ -2,6 +2,7 @@ var model = require('../Models/Post');
 
 exports.deletePost = function(req, res) {
     console.log('The post have been deleted!');
+    res.json({message: 'this is an error!'});
     // var option = {_id: req.params.id};
     // model.remove(option, function(err) {
     //     if(err) {
@@ -38,3 +39,16 @@ exports.getPosts = function(req, res) {
     });
 }
 
+exports.updatePost = function(req, res){
+    var id = req.params.id;
+    var update = {
+        postBody: req.body.postBody
+    };
+    model.findByIdAndUpdate(id, update, function(err){
+        if(err) {
+            res.json({err: err, message: 'Update error'});
+        } else{
+            res.json({message: update});
+    }
+    });
+}
