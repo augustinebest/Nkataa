@@ -1,16 +1,16 @@
 var model = require('../Models/Post');
 
 exports.deletePost = function(req, res) {
-    console.log('The post have been deleted!');
-    res.json({message: 'this is an error!'});
-    // var option = {_id: req.params.id};
-    // model.remove(option, function(err) {
-    //     if(err) {
-    //         res.json({err: err, message: 'This post cannot be deleted!'});
-    //     }else {
-    //         res.json({message: 'This post have been deleted!'});
-    //     }
-    // })
+    // console.log('The post have been deleted!');
+    // res.json({message: 'this is an error!'});
+    var option = {_id: req.params.id};
+    model.remove(option, function(err) {
+        if(err) {
+            res.json({err: err, message: 'This post cannot be deleted!'});
+        }else {
+            res.json({message: 'This post have been deleted!'});
+        }
+    })
 }
 
 
