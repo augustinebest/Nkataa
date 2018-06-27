@@ -1,4 +1,4 @@
-var model = require('../Model/Post');
+var model = require('../Models/Post');
 
 exports.addPost = function(req, res) {
     var data = {

@@ -7,4 +7,4 @@ var PostSchema = mongoose.Schema({
     comments: [{type: mongoose.Schema.Types.ObjectId, ref: 'Comment'}] //references the multiple comments made by a singl
 });
 
-module.exports = mongoose.model('Post'. PostSchema);
+module.exports = mongoose.model('Post', PostSchema);
