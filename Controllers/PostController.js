@@ -26,8 +26,8 @@ exports.getPosts = function(req, res) {
 }
 
 exports.deletePost = function(req, res) {
-    var  = {_id: req.params.id};
-    model.remove(, function(req, res) {
+    var id = {_id: req.params.id};
+    model.remove(id, function(req, res) {
         if(err) {
             res.json({err: err, message: 'This post cannot be deleted!'});
         }else {
