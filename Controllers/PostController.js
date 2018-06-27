@@ -39,6 +39,11 @@ exports.getPosts = function(req, res) {
     });
 }
 
+exports.getPostByAUser = function(req, res) {
+    var option = {_id: req.params.id};
+    res.json(option);
+}
+
 exports.updatePost = function(req, res){
     var id = req.params.id;
     var update = {

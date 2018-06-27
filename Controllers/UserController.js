@@ -91,3 +91,13 @@ exports.updateUser = function(req, res) {
         }
     });
 }
+
+// exports.get = function(req, res, options) {
+//     model.find(options).populate('posts').exec(function(err) {
+//         if(err) {
+//             res.json({err: err});
+//         }else {
+//             res.json(options);
+//         }
+//     })
+// }
