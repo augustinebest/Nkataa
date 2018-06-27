@@ -46,7 +46,7 @@ exports.updatePost = function(req, res){
     };
     model.findByIdAndUpdate(id, update, function(err){
         if(err) {
-            res.json({err: err, message: 'Update error'});
+            res.json({err: err, message: 'Update error'})
         } else{
             res.json({message: update});
     }
