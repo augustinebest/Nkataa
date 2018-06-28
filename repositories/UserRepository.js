@@ -1,11 +1,10 @@
-var model = ('../Models/User');
+var model = require('../Models/User');
+var BaseRepository = require('../repositories/BaseRepository');
 
-var baseRepository = require('../repositories/BaseRepository');
-
-function userRepository() {
+function UserRepository() {
 
 }
 
-userRepository.prototype = baseRepository(model);
+UserRepository.prototype = BaseRepository(model);
 
-module.exports = new userRepository();
+module.exports = new UserRepository();

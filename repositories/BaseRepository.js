@@ -4,9 +4,12 @@ function BaseRepository(model) {
     this.model = model;
 }
 
-BaseRepository.prototype.add = function(option, structure, callback) {
-    this.model.find(option, structure, callback);
+BaseRepository.prototype.add = function(data, callback) {
+    this.model.create(data, callback);
 }
+
+
+
 module.exports = function(model) {
     return new BaseRepository(model);
 }
