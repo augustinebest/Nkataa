@@ -6,6 +6,8 @@ var userController1 = require('../Controllers1/UserController');
 router.post('/create', userController1.addUser1);
 router.get('/', userController1.getUsers);
 router.get('/de/:id', userController1.deleteUser);
+router.get('/search/', userController1.getUserByParam);
+router.get('/check/:id', userController1.getUserId);
 // router.get('/de/:id', userController.delete);
 // router.get('/', userController.getUsers);
 // router.get('/search/:key/:value', userController.getUserByParam);

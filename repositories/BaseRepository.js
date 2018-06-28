@@ -16,6 +16,14 @@ BaseRepository.prototype.delete = function(id, callback) {
     this.model.remove(id, callback);
 }
 
+BaseRepository.prototype.get = function(value, callback) {
+    this.model.find(value, '-password', callback);
+}
+
+BaseRepository.prototype.getId = function(id, callback) {
+    this.model.findById(id, callback);
+}
+
 module.exports = function(model) {
     return new BaseRepository(model);
 }

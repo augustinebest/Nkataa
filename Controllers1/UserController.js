@@ -21,3 +21,9 @@ exports.deleteUser = function(req, res) {
     return service.deleteUser(req, res, id);
 }
 
+exports.getUserByParam = function(req, res) {
+    value = req.query;
+    // res.json(value);
+    return service.getUserByParam(req, res, value);
+}
+

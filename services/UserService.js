@@ -21,3 +21,18 @@ exports.deleteUser = function(req, res, id) {
         res.json({message: 'This post have been deleted!'});
     })
 }
+
+exports.getUserByParam = function(req, res, value) {
+    repository.get(value, function(err, users) {
+        if(err) res.json({err: err});
+        res.json(users);
+    })
+}
+
+exports.getUserId = function(id, req, res) {
+    repository.getId(id, function(err, users) {
+        if(err) res.json({err: err});
+        res.json(users);
+        // console.log(id);
+    })
+}
