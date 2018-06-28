@@ -36,3 +36,10 @@ exports.getUserId = function(id, req, res) {
         // console.log(id);
     })
 }
+
+exports.updateUser = function(id, update , req, res) {
+    repository.getUpdate(id, update, function(err) {
+        if(err) res.json({err: err});
+        res.json({message: "This user have been updated!"});
+    })
+}

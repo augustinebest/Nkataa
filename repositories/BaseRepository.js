@@ -24,6 +24,10 @@ BaseRepository.prototype.getId = function(id, callback) {
     this.model.findById(id, callback);
 }
 
+BaseRepository.prototype.getUpdate = function(id, update, callback) {
+    this.model.findByIdAndUpdate(id, update, callback);
+}
+
 module.exports = function(model) {
     return new BaseRepository(model);
 }

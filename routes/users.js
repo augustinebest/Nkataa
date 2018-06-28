@@ -8,6 +8,7 @@ router.get('/', userController1.getUsers);
 router.get('/de/:id', userController1.deleteUser);
 router.get('/search/', userController1.getUserByParam);
 router.get('/check/:id', userController1.getUserId);
+router.post('/update/:id', userController1.updateUser);
 // router.get('/de/:id', userController.delete);
 // router.get('/', userController.getUsers);
 // router.get('/search/:key/:value', userController.getUserByParam);
