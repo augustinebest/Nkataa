@@ -15,4 +15,9 @@ exports.getUsers = function(req, res) {
     })
 }
 
-exports.
+exports.deleteUser = function(req, res, id) {
+    repository.delete(id, function(err) {
+        if(err) res.json({err: err});
+        res.json({message: 'This post have been deleted!'});
+    })
+}

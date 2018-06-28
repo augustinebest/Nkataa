@@ -12,6 +12,10 @@ BaseRepository.prototype.get = function(options, callback) {
     this.model.find(options, callback);
 }
 
+BaseRepository.prototype.delete = function(id, callback) {
+    this.model.remove(id, callback);
+}
+
 module.exports = function(model) {
     return new BaseRepository(model);
 }
