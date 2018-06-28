@@ -13,5 +13,6 @@ exports.addUser1 = function(req, res) {
 }
 
 exports.getUsers = function(req, res) {
-    return service.getAllUsers(req, res);
+    return service.getUsers(req, res);
+    
 } 

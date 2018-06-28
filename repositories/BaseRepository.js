@@ -8,7 +8,9 @@ BaseRepository.prototype.add = function(data, callback) {
     this.model.create(data, callback);
 }
 
-
+BaseRepository.prototype.get = function(options, callback) {
+    this.model.find(options, callback);
+}
 
 module.exports = function(model) {
     return new BaseRepository(model);

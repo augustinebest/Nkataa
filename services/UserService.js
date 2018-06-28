@@ -7,9 +7,12 @@ exports.addUser = function(data, req, res) {
     })
 }
 
-exports.getAllUsers = function(req, res) {
-    respository.get({}, function(err, users) {
+exports.getUsers = function(req, res) {
+    repository.get({}, function(err, users) {
         if(err) res.json({err: err, message: 'Sorry, something went wrong'});
         res.json(users);
+        // console.log('I am fucking tired!');
     })
 }
+
+exports.
