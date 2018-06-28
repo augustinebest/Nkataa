@@ -34,5 +34,12 @@ exports.getUserId = function(req, res) {
 }
 
 exports.updateUser = function(req, res) {
-    l
+    let id = {_id : req.params.id};
+    let update = {
+        name : req.body.name,
+        email : req.body.email,
+        password : req.body.password
+    }
+
+    return service.updateUser(id, update, req, res);
 }
