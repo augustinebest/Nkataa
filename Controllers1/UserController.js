@@ -32,3 +32,7 @@ exports.getUserId = function(req, res) {
     // res.json(id);
     return service.getUserId(id, req, res);
 }
+
+exports.updateUser = function(req, res) {
+    l
+}
