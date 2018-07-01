@@ -11,3 +11,7 @@ exports.addComment = function(req, res) {
     return service.addComment(req, res, data);
 }
 
+exports.deleteComment = function(req, res) {
+    let id = {_id : req.params.id};
+    return service.deleteComment(id, req, res);
+}
