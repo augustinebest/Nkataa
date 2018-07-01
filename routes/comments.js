@@ -1,7 +1,8 @@
 var express = require('express');
 
 var router = express.Router();
-var commentController = require('../Controllers/CommentController');
+var commentController1 = require('../Controllers1/CommentController');
 
-router.get('/create', commentController.addComment);
+router.post('/create', commentController1.addComment);
+router.get('/delete/:id', commentController1.deleteComment);
 module.exports = router;

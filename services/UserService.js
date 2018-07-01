@@ -23,7 +23,7 @@ exports.deleteUser = function(req, res, id) {
 }
 
 exports.getUserByParam = function(req, res, value) {
-    repository.get(value, function(err, users) {
+    repository.getParam(value, function(err, users) {
         if(err) res.json({err: err});
         res.json(users);
     })

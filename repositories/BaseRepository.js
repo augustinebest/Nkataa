@@ -16,7 +16,7 @@ BaseRepository.prototype.delete = function(id, callback) {
     this.model.remove(id, callback);
 }
 
-BaseRepository.prototype.get = function(value, callback) {
+BaseRepository.prototype.getParam = function(value, callback) {
     this.model.find(value, '-password', callback);
 }
 
