@@ -16,3 +16,6 @@ exports.deleteComment = function(req, res) {
     return service.deleteComment(id, req, res);
 }
 
+exports.updateComment = function(req, res) {
+    
+}
